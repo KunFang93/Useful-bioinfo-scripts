@@ -7,7 +7,7 @@ Pandas
 
 ## Usages:
 ```
-Python find_common.py samples.txt
+Python find_commons.py samples.txt
 ```
 
 ## Output
