@@ -25,7 +25,7 @@ gse2mark_wri = dict(zip(wri_pheno['RiboRNum'].astype(str),wri_pheno['Dx']))
 wri_ctrl_list = [str(key) for key in gse2mark_wri if gse2mark_wri[key]=="Control"]
 wri_asd_list = [str(key) for key in gse2mark_wri if gse2mark_wri[key]=="Diseased"]
 wri_selected_genes['Log2FC'] = np.log2(wri_selected_genes[wri_asd_list].mean(axis=1)/wri_selected_genes[wri_ctrl_list].mean(axis=1))
-wri_selected_genes['t-stats'], wri_selected_genes['p-val'] = ttest_ind(wri_selected_genes[wri_asd_list],wri_selected_genes[wri_ctrl_list],axis=1,equal_var=False)
+wri_selected_genes['t-stats'], wri_selected_genes['p-val'] = ttest_ind(wri_selected_genes[wri_asd_list],wri_selected_genes[wri_ctrl_list],axis=1)
 wri_out = wri_selected_genes[["hgnc_symbol","Log2FC","p-val"]]
 
 # Irimia
