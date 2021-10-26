@@ -4,10 +4,10 @@ import pandas as pd
 
 try:
     meta_info_f = sys.argv[1]
-    expand_len = float(sys.argv[2])
+    expand_len = int(sys.argv[2])
     cutoff = float(sys.argv[3])
 except IndexError:
-    print("Usage: python find_chip_exon.py meta_info.xlsx exon_expand_length(FLOAT) cutoff(FLOAT,[0,1])")
+    print("Usage: python find_chip_exon.py meta_info.xlsx exon_expand_length(INT) cutoff(FLOAT,[0,1])")
     exit(1)
 
 chip_suffix = '_chip.bed'
